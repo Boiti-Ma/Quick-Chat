@@ -16,7 +16,7 @@ class Login {
     String StoreCellphonenumber;
     String registerUser;
     String Storefirstname;
-    String lastname;
+    String Storelastname;
 
     boolean checkUsername(String Username) {
         if (Username.contains("_") && Username.length() <= 5) {
