@@ -38,7 +38,7 @@ class Login {
         boolean haSpecialChar = false;
 
         //define special characters
-        String SpecialChar = "!@#$%^&*()";
+        String SpecialChar = "!@#$%^&*():";
         char ch;
         for (int i = 0; i < password.length(); i++) {
             ch = password.charAt(i);
