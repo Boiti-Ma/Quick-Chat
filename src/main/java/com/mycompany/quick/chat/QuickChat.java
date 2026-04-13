@@ -19,7 +19,7 @@ class Login {
     String lastname;
 
     boolean checkUsername(String Username) {
-        if (Username.contains("_") && Username.length() == 5) {
+        if (Username.contains("_") && Username.length() <= 5) {
             return true;
         } else {
             System.out.println("Username should contain an underscore and"
