@@ -8,6 +8,9 @@ package com.mycompany.quick.chat;
  *
  * @author Student
  */
+import java.io.FileWriter;
+import java.io.IOException;
+import org.json.JSONObject;
 class Message{
     private String messageID;
   private int messageNumber;
@@ -46,6 +49,19 @@ class Message{
          }else{
              return"Message ready to send";
          }
+     }
+     // create method to store message
+     public JSONObject Storemessage() throws IOException{
+         JSONObject obj =new JSONObject();
+         obj.put("messageID", messageID);
+         obj.put("messageHash", messageHash);
+         obj.put("recipient", recipient);
+         obj.put("message", message);
+          // Save JSON to file
+            FileWriter file = new FileWriter("messages.json");
+            file.write(obj.toString(4)); // Pretty format
+            file.close();
+         return obj;
      }
      //Create Message Hash
      public String createMessageHash(){
