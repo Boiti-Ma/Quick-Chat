@@ -20,9 +20,7 @@ public class MessageTest {
     public MessageTest() {
     }
     
-    @BeforeAll
-    public static void setUpClass() {
-    }
+    
     
     
     
