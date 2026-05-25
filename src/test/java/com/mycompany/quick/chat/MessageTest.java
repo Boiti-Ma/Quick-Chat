@@ -28,9 +28,7 @@ public class MessageTest {
     public static void tearDownClass() {
     }
     
-    @BeforeEach
-    public void setUp() {
-    }
+    
     
    
 
