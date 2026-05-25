@@ -32,9 +32,7 @@ public class MessageTest {
     public void setUp() {
     }
     
-    @AfterEach
-    public void tearDown() {
-    }
+   
 
     /**
      * Test of checkMessageID method, of class Message.
