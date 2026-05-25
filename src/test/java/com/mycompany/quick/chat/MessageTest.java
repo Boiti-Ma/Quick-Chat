@@ -42,12 +42,11 @@ public class MessageTest {
     @Test
     public void testCheckMessageID() {
         System.out.println("checkMessageID");
-        Message instance = null;
-        boolean expResult = false;
+        Message instance = new Message("+27718693002","Hi mike can you jion us for dinner tonigth");
+        boolean expResult = true;
         boolean result = instance.checkMessageID();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -55,13 +54,12 @@ public class MessageTest {
      */
     @Test
     public void testCheckRecipientCell() {
-        System.out.println("+2771186693002");
-        Message instance = null;
+        System.out.println("CheckRecipientCell");
+        Message instance = new Message("+2771186693002","Hi Keagen did you recive the payment?");
         boolean expResult = true;
         boolean result = instance.checkRecipientCell();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -69,41 +67,15 @@ public class MessageTest {
      */
     @Test
     public void testSentMessage() {
-        System.out.println("HI Mike,can you join us for dinner tonight");
-        Message instance = null;
+        System.out.println("sentmessage lengthseccess");
+        Message instance = new Message("+27718693002","Hi mike can you jion us for dinner tonigth");
         String expResult = "";
         String result = instance.sentMessage();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
-    /**
-     * Test of createMessageHash method, of class Message.
-     */
-    @Test
-    public void testCreateMessageHash() {
-        System.out.println("createMessageHash");
-        Message instance = null;
-        String expResult = "";
-        String result = instance.createMessageHash();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of printMessage method, of class Message.
-     */
-    @Test
-    public void testPrintMessage() {
-        System.out.println("printMessage");
-        Message instance = null;
-        String expResult = "";
-        String result = instance.printMessage();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    
     }
     
-}
+
