@@ -1,8 +1,9 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.quick.chat;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -92,7 +93,7 @@ class Login {
     String returnLoginStatus(String username, String password, String firstname, String lastname) {
 
         if (username.equals(StoreUsername) && password.equals(StorePassword)) {
-            return "Welcome" + firstname + " "+ lastname + ", its good to see you again";
+            return "Welcome" + firstname + " " + lastname + ", its good to see you again";
         } else {
             return "User name or password incorrect, please try again";
 
@@ -106,8 +107,8 @@ class Login {
  */
 public class QuickChat {
 
-    public static void main(String[] args) {
-          // TODO code application logic here
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
         Scanner scan = new Scanner(System.in);
 
         Login login = new Login();
@@ -143,9 +144,62 @@ public class QuickChat {
 
         // Show login message
         System.out.println(login.returnLoginStatus(userName, password, firstname, lastname));
+
+        int menuOption = 0;
+        while (menuOption != 3) {
+            System.out.println("1) Send message");
+            System.out.println("2) Show recently sent messages");
+            System.out.println("3) Quit");
+
+            System.out.println("Choose an Option");
+            menuOption = scan.nextInt();
+            scan.nextLine();
+            if (menuOption == 1) {
+                System.out.println("How many messages do want to send");
+                int numMessages = scan.nextInt();
+                scan.nextLine();
+
+                for (int i = 0; i < numMessages; i++) {
+                    System.out.println("Enter recipient number :");
+                    String recipient = scan.nextLine();
+
+                    System.out.println("Enter your message :");
+                    String messageText = scan.nextLine();
+
+                    Message msg = new Message(recipient, messageText);
+                    System.out.println(msg.sentMessage());
+                    if (msg.checkRecipientCell() && msg.checkMessageID());
+                    System.out.println(msg.printMessage());
+                    System.out.println(login.returnLoginStatus(userName, password, firstname, lastname));
+                    System.out.println("1) Send message");
+                    System.out.println("2) Disregard Message");
+                    System.out.println("3) Store message");
+
+                    int choice = scan.nextInt();
+                    scan.nextLine();
+
+                    if (choice == 1) {
+                        System.out.println("Message successfully sent");
+                    } else if (choice == 2) {
+                        System.out.println("Press 0  to delete the message");
+                    } else if (choice == 3) {
+                        System.out.println(msg.Storemessage());
+                        System.out.println("Message Successfully Stored");
+                    } else {
+                        System.out.println("Invalid message details");
+                    }
+                    System.out.println("Total message sent :" + numMessages);
+
+                }
+
+            }
+            if (menuOption == 2) {
+                System.out.println("Coming soon");
+
+            } else if (menuOption == 3) {
+                System.out.println("Application closed");
+            }
+        }
     }
 
 }
-
-    
-
