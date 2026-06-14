@@ -27,9 +27,7 @@ public class MessageIT {
     
     
     
-    @AfterEach
-    public void tearDown() {
-    }
+    
 
     /**
      * Test of checkMessageID method, of class Message.
