@@ -132,7 +132,7 @@ class Message{
         System.out.println("No stored Messages");
     }
 
-    int longest = 0;
+    
     for (int i = 1; i < SentMessagesCount; i++) {
         if (StoredMessages[i].length() > StoredMessages[longest].length()) {
             longest = i;
