@@ -23,9 +23,7 @@ public class MessageIT {
     
     
     
-    @AfterAll
-    public static void tearDownClass() {
-    }
+    
     
     @BeforeEach
     public void setUp() {
